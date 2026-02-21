@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Vault | Madhav Jewellers</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body style="background: #f8f6f2;">
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <div class="brand-logo">
+                <span class="mj">MJ</span>
+                <span class="sub" style="color: var(--gold-primary);">Control Vault</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Exit Vault</a></li>
+            </ul>
+            <button class="nav-menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="nav-menu-btn mobile-menu-close" onclick="toggleMenu()">
+            <i data-lucide="x"></i>
+        </button>
+        <a href="index.html" onclick="toggleMenu()">Exit Vault</a>
+    </div>
+
+    <main class="container" style="padding: 150px 0 100px;">
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 60px; align-items: start;">
+
+            <!-- Vault Sidebar -->
+            <div
+                style="background: var(--silk); padding: 40px; border: 1px solid var(--border-light); box-shadow: var(--shadow-premium);">
+                <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 30px; color: var(--gold-primary);">Vault
+                    Navigation</h3>
+                <ul style="list-style: none; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase;">
+                    <li style="margin-bottom: 25px; font-weight: 700; color: var(--gold-primary);">📊 Global Rates</li>
+                    <li style="margin-bottom: 25px; opacity: 0.4;">🛍 Vault Inventory</li>
+                    <li style="margin-bottom: 25px; opacity: 0.4;">🧾 Transaction Log</li>
+                    <li style="margin-bottom: 25px; opacity: 0.4;">👤 Client Relations</li>
+                </ul>
+            </div>
+
+            <!-- Configuration Portal -->
+            <div
+                style="background: var(--silk); padding: 60px; border: 1px solid var(--border-light); box-shadow: var(--shadow-premium);">
+                <h2 class="serif" style="font-size: 3rem; margin-bottom: 50px;">Boutique <i>Configuration</i></h2>
+
+                <div style="margin-bottom: 40px;">
+                    <label
+                        style="display:block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-primary); margin-bottom: 20px; font-weight: 700;">Global
+                        22K Gold Rate (₹)</label>
+                    <input type="number" id="gold-rate-input"
+                        style="width: 100%; padding: 30px; background: #faf9f6; border: 1px solid var(--border-light); color: var(--text-main); font-size: 2rem; font-family: 'Cormorant Garamond', serif;">
+                </div>
+
+                <div style="margin-bottom: 40px;">
+                    <label
+                        style="display:block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-primary); margin-bottom: 20px; font-weight: 700;">Global
+                        Silver Rate (₹ / Gram)</label>
+                    <input type="number" id="silver-rate-input"
+                        style="width: 100%; padding: 30px; background: #faf9f6; border: 1px solid var(--border-light); color: var(--text-main); font-size: 2rem; font-family: 'Cormorant Garamond', serif;">
+                </div>
+
+                <div style="margin-bottom: 50px;">
+                    <label
+                        style="display:block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-primary); margin-bottom: 20px; font-weight: 700;">Base
+                        Karigari Labour (₹)</label>
+                    <input type="number" id="labour-input"
+                        style="width: 100%; padding: 30px; background: #faf9f6; border: 1px solid var(--border-light); color: var(--text-main); font-size: 2rem; font-family: 'Cormorant Garamond', serif;">
+                </div>
+
+                <button class="btn-primary" style="width: 100%; padding: 25px;" onclick="saveVault()">Commit Changes to
+                    Live Boutique</button>
+
+                <div id="save-msg"
+                    style="display:none; text-align: center; margin-top: 30px; color: #27ae60; font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em;">
+                    ✨ VAULT SYNC COMPLETE. LIVE REFRESHED.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Data hydration
+        document.getElementById('gold-rate-input').value = localStorage.getItem('gold_rate') || 14335;
+        document.getElementById('silver-rate-input').value = localStorage.getItem('silver_rate') || 270;
+        document.getElementById('labour-input').value = localStorage.getItem('labour_charge') || 4500;
+
+        function saveVault() {
+            const gr = document.getElementById('gold-rate-input').value;
+            const sr = document.getElementById('silver-rate-input').value;
+            const lb = document.getElementById('labour-input').value;
+
+            localStorage.setItem('gold_rate', gr);
+            localStorage.setItem('silver_rate', sr);
+            localStorage.setItem('labour_charge', lb);
+
+            const msg = document.getElementById('save-msg');
+            msg.style.display = "block";
+            setTimeout(() => { msg.style.display = "none"; }, 3000);
+        }
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

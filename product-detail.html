@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Product Details | Madhav Jewellers</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+</head>
+
+<body>
+
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar" id="progress-bar"></div>
+    </div>
+
+    <div class="gold-ticker">
+        <div class="ticker-wrap">
+            <div class="ticker-item"><span class="pulse-dot"></span>Live 22K Gold: <b class="ticker-gold">₹14,335</b>
+                <small>/ gm</small>
+            </div>
+            <div class="ticker-item">🥈 Live Silver: <b class="ticker-silver">₹270</b> <small>/ gm</small></div>
+            <div class="ticker-item">💎 BIS Hallmarked Purity</div>
+            <div class="ticker-item">🏛 Flagship: Karelibaug</div>
+            <!-- Duplicate for loop -->
+            <div class="ticker-item"><span class="pulse-dot"></span>Live 22K Gold: <b class="ticker-gold">₹14,335</b>
+                <small>/ gm</small>
+            </div>
+            <div class="ticker-item">🥈 Live Silver: <b class="ticker-silver">₹270</b> <small>/ gm</small></div>
+            <div class="ticker-item">💎 BIS Hallmarked Purity</div>
+            <div class="ticker-item">🏛 Flagship: Karelibaug</div>
+        </div>
+    </div>
+
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="brand-logo">
+                <span class="mj">MJ</span>
+                <span class="sub">Madhav Jewellers</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="products.html">Collection</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html" style="opacity: 0.01; width: 10px; display: inline-block;">.</a></li>
+            </ul>
+            <button class="nav-menu-btn" onclick="toggleMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="nav-menu-btn mobile-menu-close" onclick="toggleMenu()">
+            <i data-lucide="x"></i>
+        </button>
+        <a href="index.html" onclick="toggleMenu()">Home</a>
+        <a href="about.html" onclick="toggleMenu()">About</a>
+        <a href="products.html" onclick="toggleMenu()">Collection</a>
+        <a href="contact.html" onclick="toggleMenu()">Contact</a>
+    </div>
+
+    <main class="container reveal active" style="padding: 150px 0 120px;">
+        <div class="availability-badge">
+            <span class="pulse-dot"></span> Exclusive Piece • Only 1 left in Karelibaug
+        </div>
+        <div class="detail-grid">
+
+            <div id="product-display">
+                <div
+                    style="background: var(--silk); padding: 50px; border: 1px solid var(--border-light); box-shadow: var(--shadow-premium);">
+                    <img id="main-product-img" src="images/9.jpg" alt="Product"
+                        style="width: 100%; height: auto; display: block;">
+                </div>
+                <div style="margin-top: 60px;">
+                    <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
+                        <span
+                            style="letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold-primary); font-size: 0.7rem; font-weight: 700;"
+                            id="study-number">STUDY NO. 042</span>
+                        <span style="width: 30px; height: 1px; background: var(--border-light);"></span>
+                        <span id="product-metal"
+                            style="font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-soft);">GOLD</span>
+                    </div>
+
+                    <h1 class="serif" style="line-height: 1.1; margin: 0 0 30px;" id="product-title">
+                        Gold Necklace & Earrings</h1>
+
+                    <div id="product-highlights"
+                        style="margin-bottom: 40px; border-left: 1px solid var(--gold-primary); padding-left: 25px;">
+                        <!-- Highlights will be injected here -->
+                    </div>
+
+                    <p style="color: var(--text-soft); font-size: 1.1rem; line-height: 2; margin-bottom: 50px;"
+                        id="product-description">
+                        A masterpiece of 22K Hallmarked gold, featuring intricate archival patterns inspired by the
+                        royalty of Gujarat. Entirely hand-finished in our Vadodara studio.</p>
+
+                    <div id="specifications"
+                        style="margin-top: 50px; border-top: 1px solid var(--border-light); padding-top: 40px;">
+                        <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 25px;">Technical
+                            <i>Specifications</i>
+                        </h3>
+                        <div class="spec-grid">
+                            <div style="color: var(--text-soft);">Metal Purity</div>
+                            <div id="spec-purity" style="font-weight: 500;">22K Hallmarked</div>
+
+                            <div style="color: var(--text-soft);">Collection</div>
+                            <div id="spec-collection" style="font-weight: 500;">Archival</div>
+
+                            <div style="color: var(--text-soft);">Studio Location</div>
+                            <div style="font-weight: 500;">Vadodara, Gujarat</div>
+
+                            <div style="color: var(--text-soft);">Certification</div>
+                            <div style="font-weight: 500;">BIS Hallmarked / NABL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                style="background: var(--silk); padding: 50px; border: 1px solid var(--border-light); box-shadow: var(--shadow-premium);">
+                <h2 class="serif" style="font-size: 2.2rem; margin-bottom: 50px;">Tailoring <i>Specs</i></h2>
+
+                <div style="margin-bottom: 40px;">
+                    <label
+                        style="display:block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 20px; color: var(--gold-primary); font-weight: 700;">Weight
+                        Preset (Grams)</label>
+                    <div style="display: flex; gap: 15px;">
+                        <button class="btn-primary" style="padding: 15px 30px; font-size: 0.7rem;"
+                            onclick="updateWeight(10, this)">10G</button>
+                        <button class="btn-primary"
+                            style="padding: 15px 30px; font-size: 0.7rem; background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary);"
+                            onclick="updateWeight(25, this)">25G</button>
+                        <button class="btn-primary"
+                            style="padding: 15px 30px; font-size: 0.7rem; background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary);"
+                            onclick="updateWeight(50, this)">50G</button>
+                    </div>
+                </div>
+
+                <div style="margin-bottom: 40px;">
+                    <label
+                        style="display:block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 20px; color: var(--gold-primary); font-weight: 700;">Order
+                        Multiplier</label>
+                    <input type="number" id="qty" value="1" min="1" onchange="calculate()"
+                        style="width: 100%; padding: 20px; border: none; border-bottom: 1px solid var(--border-light); font-family: inherit; font-size: 1.2rem;">
+                </div>
+
+                <div style="margin-bottom: 40px;">
+                    <label
+                        style="display:block; font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; margin-bottom: 20px; color: var(--gold-primary); font-weight: 700;">Client
+                        Full Name</label>
+                    <input type="text" id="client-name" placeholder="Leave blank for guest"
+                        style="width: 100%; padding: 20px; border: none; border-bottom: 1px solid var(--border-light); font-family: inherit; font-size: 1.1rem; background: transparent;">
+                </div>
+
+                <div style="background: #faf9f6; padding: 40px; border: 1px dashed var(--gold-primary);">
+                    <h3 class="serif" style="font-size: 1.8rem; margin-bottom: 30px; color: var(--text-main);">Official
+                        <i>Quotation</i>
+                    </h3>
+
+                    <div
+                        style="display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.9rem; color: var(--text-soft);">
+                        <span>22K Pure Rate</span>
+                        <span id="ui-gold-rate" style="font-weight: 600; color: var(--text-main);">₹14,900 / gm</span>
+                    </div>
+                    <div
+                        style="display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 0.9rem; color: var(--text-soft);">
+                        <span>Weight Allocation</span>
+                        <span id="ui-weight" style="font-weight: 600; color: var(--text-main);">10g x 1</span>
+                    </div>
+                    <div style="margin-top: 25px; margin-bottom: 25px;">
+                        <label
+                            style="display:block; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px; opacity: 0.6;">Promo
+                            Code</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" id="promo-input" placeholder="ENTER CODE HERE"
+                                style="flex: 1; padding: 12px; border: 1px solid var(--border-light); font-family: inherit; text-transform: uppercase; font-size: 0.9rem;">
+                            <button onclick="calculate()"
+                                style="padding: 0 20px; background: var(--gold-primary); color: white; border: none; cursor: pointer; font-size: 0.7rem; font-weight: 700;">APPLY</button>
+                        </div>
+                        <div id="promo-status" style="font-size: 0.7rem; margin-top: 8px; font-weight: 600;"></div>
+                    </div>
+
+                    <div
+                        style="display: flex; justify-content: space-between; margin-top: 40px; border-top: 1px solid var(--gold-primary); padding-top: 30px;">
+                        <div>
+                            <span class="serif" style="font-size: 1.6rem; font-weight: 600; display: block;">Net
+                                Total</span>
+                            <span id="discount-label"
+                                style="font-size: 0.7rem; color: #27ae60; font-weight: 700;"></span>
+                        </div>
+                        <span id="ui-total"
+                            style="font-size: 2rem; font-weight: 700; color: var(--gold-primary);">₹158,105</span>
+                    </div>
+
+                    <button class="btn-primary" style="width:100%; margin-top: 50px;" onclick="generatePDF()">Generate
+                        Archival PDF</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Advance Footer -->
+    <div class="discount-banner hidden" id="discountBanner">
+        ✨ LUCK WHEEL: ACTIVE
+    </div>
+
+    <!-- Invoice Modal -->
+    <div class="modal-overlay" id="invoiceModal">
+        <div class="invoice-modal">
+            <div class="invoice-header">
+                <h2>MADHAV JEWELLERS</h2>
+                <small>Official Heritage Investment Summary</small>
+            </div>
+            <div class="invoice-body" id="invoiceContent">
+                <!-- Content injected via JS -->
+            </div>
+            <div class="invoice-footer">
+                <button class="modal-btn btn-edit" onclick="editInvoice()">Edit</button>
+                <button class="modal-btn btn-download" onclick="downloadInvoice()">Download</button>
+                <button class="modal-btn btn-cancel" onclick="closeInvoice()">Cancel</button>
+                <button class="modal-btn btn-ok" onclick="closeInvoice()">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product data
+        const PRODUCTS = {
+            'necklace': {
+                name: 'Gold Necklace & Earrings',
+                studyNo: '042',
+                image: 'images/9.jpg',
+                description: 'A masterpiece of 22K Hallmarked gold, featuring intricate archival patterns inspired by the royalty of Gujarat. Entirely hand-finished in our Vadodara studio.',
+                title: 'Gold Necklace & Earrings | Madhav Jewellers',
+                metal: 'Gold',
+                purity: '22K Hallmarked',
+                collection: 'Archival Heritage',
+                highlights: ['Hand-finished in Vadodara', 'Intricate Temple Motifs', 'Adjustable length chain']
+            },
+            'bangles': {
+                name: 'Gold Jewellery Set',
+                studyNo: '043',
+                image: 'images/10.jpg',
+                description: 'A luxurious 22K gold ensemble comprising a finely crafted necklace, matching earrings, and an intricate ring. This set embodies the rich heritage of traditional Gujarati jewelry design.',
+                title: 'Gold Jewellery Set | Madhav Jewellers',
+                metal: 'Gold',
+                purity: '22K Hallmarked',
+                collection: 'Royal Indian',
+                highlights: ['Complete Matching Set', 'High-polish gold finish', 'Precision filigree work']
+            },
+            'choker': {
+                name: 'Silver Chain Bracelet',
+                studyNo: '044',
+                image: 'images/11.jpg',
+                description: 'An exquisite sterling silver chain bracelet with a modern yet timeless design. Its hand-woven texture and elegant finish make it a perfect statement piece for any occasion.',
+                title: 'Silver Chain Bracelet | Madhav Jewellers',
+                metal: 'Silver',
+                purity: '925 Sterling',
+                collection: 'Modern Archive',
+                highlights: ['Pure Sterling Silver', 'Hand-woven chain pattern', 'Secure designer clasp']
+            },
+            'earrings': {
+                name: 'Silver Bracelet',
+                studyNo: '045',
+                image: 'images/12.jpg',
+                description: 'A sleek and contemporary silver bracelet featuring a unique chevron pattern. Crafted with precision from premium quality silver, it offers a sophisticated look for the modern connoisseur.',
+                title: 'Silver Bracelet | Madhav Jewellers',
+                metal: 'Silver',
+                purity: '925 Sterling',
+                collection: 'Contemporary',
+                highlights: ['Minimalist Aesthetic', 'Geometric Chevron Pattern', 'Unisex design profile']
+            },
+            'bridal': {
+                name: 'Silver Kada',
+                studyNo: '046',
+                image: 'images/13.jpg',
+                description: 'A traditional silver Kada with a refined matte finish and intricate detailing. This solid silver bangle represents strength and elegance, making it a classic addition to any collection.',
+                title: 'Silver Kada | Madhav Jewellers',
+                metal: 'Silver',
+                purity: '925 Sterling',
+                collection: 'Traditional',
+                highlights: ['Solid Silver Core', 'Matte Artisan Finish', 'Embossed detailing']
+            },
+            'chain': {
+                name: 'Gold Bar',
+                studyNo: '047',
+                image: 'images/15.jpg',
+                description: '24K Pure Gold Investment Bars. These hallmarked gold bars are the ultimate symbol of wealth and security. Available in various weights, they are the gold standard for pure investment.',
+                title: 'Gold Bar | Madhav Jewellers',
+                metal: 'Gold',
+                purity: '24K 99.9% Pure',
+                collection: 'Investment',
+                highlights: ['NABL Accredited', 'Swiss Standard Purity', 'Serial Numbered Bar']
+            }
+        };
+
+        // Get product ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id') || 'necklace';
+        const product = PRODUCTS[productId] || PRODUCTS['necklace'];
+        let currentProductName = product.name;
+
+        // Update page with product data
+        document.getElementById('page-title').textContent = product.title;
+        document.getElementById('main-product-img').src = product.image;
+        document.getElementById('main-product-img').alt = product.name;
+        document.getElementById('study-number').textContent = `STUDY NO. ${product.studyNo}`;
+        document.getElementById('product-metal').textContent = product.metal;
+        document.getElementById('product-title').innerHTML = product.name.replace(/(\w+)$/, '<i>$1</i>');
+        document.getElementById('product-description').textContent = product.description;
+
+        // Populate Specifications
+        document.getElementById('spec-purity').textContent = product.purity;
+        document.getElementById('spec-collection').textContent = product.collection;
+
+        // Populate Highlights
+        const highlightsContainer = document.getElementById('product-highlights');
+        highlightsContainer.innerHTML = product.highlights.map(h =>
+            `<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 0.85rem; letter-spacing: 0.05em;">
+                <span style="width: 5px; height: 5px; border-radius: 50%; background: var(--gold-primary);"></span>
+                ${h}
+            </div>`
+        ).join('');
+
+        const CONFIG = {
+            gold_rate: parseInt(localStorage.getItem('gold_rate')) || 14335,
+            silver_rate: parseInt(localStorage.getItem('silver_rate')) || 270,
+            labour: parseInt(localStorage.getItem('labour_charge')) || 4500
+        };
+
+        // Update Ticker
+        document.querySelectorAll('.ticker-gold').forEach(el => {
+            el.innerText = `₹${CONFIG.gold_rate.toLocaleString()}`;
+        });
+        document.querySelectorAll('.ticker-silver').forEach(el => {
+            el.innerText = `₹${CONFIG.silver_rate.toLocaleString()}`;
+        });
+
+        let currentWeight = 10;
+
+        function updateWeight(w, btn) {
+            currentWeight = w;
+            const btns = btn.parentElement.querySelectorAll('button');
+            btns.forEach(b => {
+                b.style.background = "transparent";
+                b.style.color = "var(--gold-primary)";
+            });
+            btn.style.background = "var(--gold-primary)";
+            btn.style.color = "white";
+            calculate();
+        }
+
+        function calculate() {
+            const qty = document.getElementById('qty').value || 1;
+            const rate = product.metal.toLowerCase() === 'silver' ? CONFIG.silver_rate : CONFIG.gold_rate;
+            const metalValue = (rate * currentWeight) * qty;
+            const subtotal = metalValue + (CONFIG.labour * qty);
+            const gst = subtotal * 0.03;
+            let total = subtotal + gst;
+
+            // Apply Discount
+            const promoInput = document.getElementById('promo-input');
+            const promoStatus = document.getElementById('promo-status');
+            const discLabel = document.getElementById('discount-label');
+            const activeCode = localStorage.getItem('heritage_promo_code');
+            const discPerc = parseInt(localStorage.getItem('heritage_discount')) || 0;
+
+            let appliedDisc = 0;
+            if (promoInput.value.trim().toUpperCase() === activeCode && activeCode) {
+                appliedDisc = (total * discPerc) / 100;
+                total -= appliedDisc;
+                promoStatus.innerText = "✓ ARCHIVAL DISCOUNT APPLIED";
+                promoStatus.style.color = "#27ae60";
+                discLabel.innerText = `${discPerc}% OFF APPLIED`;
+            } else if (promoInput.value.trim() !== "") {
+                promoStatus.innerText = "× INVALID OR EXPIRED CODE";
+                promoStatus.style.color = "#e74c3c";
+                discLabel.innerText = "";
+            } else {
+                promoStatus.innerText = "";
+                discLabel.innerText = "";
+                // Auto-fill if exists in storage
+                if (activeCode) {
+                    promoInput.value = activeCode;
+                    calculate(); // Recurse once to apply
+                    return;
+                }
+            }
+
+            document.getElementById('ui-gold-rate').innerText = `₹${rate.toLocaleString()} / gm`;
+            document.getElementById('ui-weight').innerText = `${currentWeight}g x ${qty}`;
+            document.getElementById('ui-total').innerText = `₹${Math.round(total).toLocaleString()}`;
+            document.getElementById('ticker-rate').innerText = `₹${rate.toLocaleString()}`;
+        }
+
+        function numberToWords(num) {
+            const a = ['', 'one ', 'two ', 'three ', 'four ', 'five ', 'six ', 'seven ', 'eight ', 'nine ', 'ten ', 'eleven ', 'twelve ', 'thirteen ', 'fourteen ', 'fifteen ', 'sixteen ', 'seventeen ', 'eighteen ', 'nineteen '];
+            const b = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+            if ((num = num.toString()).length > 9) return 'overflow';
+            let n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+            if (!n) return;
+            let str = '';
+            str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : '';
+            str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : '';
+            str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : '';
+            str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' : '';
+            str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'only ' : 'only ';
+            return str.toUpperCase();
+        }
+
+        async function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const gold = [197, 160, 89]; // #C5A059
+            const darkGold = [168, 134, 71];
+
+            // 1. Header Styling (Gold Bar)
+            doc.setFillColor(...gold);
+            doc.rect(0, 0, 210, 40, 'F');
+
+            // 2. Company Info
+            doc.setTextColor(255, 255, 255);
+            doc.setFont("times", "bold");
+            doc.setFontSize(26);
+            doc.text("MADHAV JEWELLERS", 105, 18, { align: "center" });
+
+            doc.setFontSize(10);
+            doc.setFont("times", "italic");
+            doc.text("Authenticity you can trust since 2005", 105, 25, { align: "center" });
+
+            doc.setFont("times", "normal");
+            doc.setFontSize(9);
+            doc.text("Vadodara Flagship, Gujarat | +91 96014 51370 | www.madhavjewellers.com", 105, 32, { align: "center" });
+
+            // 3. Document Title
+            doc.setTextColor(...darkGold);
+            doc.setFontSize(18);
+            doc.setFont("times", "bolditalic");
+            doc.text("ARCHIVAL QUOTATION", 105, 55, { align: "center" });
+
+            // 4. Client & Invoice Info
+            doc.setTextColor(40, 40, 40);
+            doc.setFontSize(10);
+            doc.setFont("times", "bold");
+            const clientName = document.getElementById('client-name').value || "Valued Client";
+            const dateStr = new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'long', year: 'numeric' });
+
+            doc.text(`CLIENT: ${clientName.toUpperCase()}`, 15, 75);
+            doc.text(`DATE: ${dateStr}`, 15, 82);
+            doc.text(`INV NO: MJ/QT/${Date.now().toString().slice(-6)}`, 160, 82);
+
+            // 5. Valuation Table
+            const qty = document.getElementById('qty').value || 1;
+            const rate = product.metal.toLowerCase() === 'silver' ? CONFIG.silver_rate : CONFIG.gold_rate;
+            const metalVal = rate * currentWeight * qty;
+            const labourVal = CONFIG.labour * qty;
+            const subtotal = metalVal + labourVal;
+            const gst = subtotal * 0.03;
+            let total = Math.round(subtotal + gst);
+
+            // Apply Discount in PDF
+            const activeCode = localStorage.getItem('heritage_promo_code');
+            const discPerc = parseInt(localStorage.getItem('heritage_discount')) || 0;
+            const promoInput = document.getElementById('promo-input').value.trim().toUpperCase();
+
+            let discRow = null;
+            if (promoInput === activeCode && activeCode) {
+                const appliedDisc = (total * discPerc) / 100;
+                total -= appliedDisc;
+                discRow = ['04', `Archival Discount (${discPerc}%)`, '-', '-', `- Rs. ${Math.round(appliedDisc).toLocaleString()}`];
+            }
+
+            const tableBody = [
+                ['01', `${product.name} - ${product.metal} (${currentWeight}g)`, qty, `Rs. ${rate.toLocaleString()}`, `Rs. ${metalVal.toLocaleString()}`],
+                ['02', 'Karigari (Labour Charges)', qty, '-', `Rs. ${labourVal.toLocaleString()}`],
+                ['03', `GST (3%) on ${product.purity}`, '-', '-', `Rs. ${gst.toLocaleString()}`]
+            ];
+            if (discRow) tableBody.push(discRow);
+
+            doc.autoTable({
+                startY: 95,
+                margin: { left: 15, right: 15 },
+                head: [['SL.', 'DESCRIPTION', 'QTY', 'RATE (gm)', 'AMOUNT (INR)']],
+                body: tableBody,
+                foot: [['', '', '', 'NET TOTAL', `Rs. ${Math.round(total).toLocaleString()}`]],
+                theme: 'grid',
+                headStyles: { fillColor: gold, textColor: 255, fontStyle: 'bold' },
+                footStyles: { fillColor: [250, 250, 250], textColor: darkGold, fontStyle: 'bold', fontSize: 12 },
+                styles: { font: 'times', fontSize: 9 }
+            });
+
+            // 7. Total in Words
+            const finalY = doc.lastAutoTable.finalY + 15;
+            doc.setFontSize(10);
+            doc.setFont("times", "bold");
+            doc.text(`Rupees in words: ${numberToWords(total)}`, 15, finalY);
+
+            // 8. Terms & Signature
+            doc.setFontSize(8);
+            doc.setFont("times", "normal");
+            doc.setTextColor(100, 100, 100);
+            doc.text("Terms & Conditions:", 15, finalY + 15);
+            doc.text("1. This is a formal quotation based on current live rates.", 15, finalY + 20);
+            doc.text("2. Final weight may vary slightly (+/- 0.05g) during hand-crafting.", 15, finalY + 25);
+            doc.text("3. Returns accepted within 7 days in original condition.", 15, finalY + 30);
+
+            doc.setTextColor(...darkGold);
+            doc.setFont("times", "bold");
+            doc.text("For MADHAV JEWELLERS", 150, finalY + 35);
+            doc.line(145, finalY + 50, 195, finalY + 50);
+            doc.setFont("times", "italic");
+            doc.setFontSize(7);
+            doc.text("Authorised Signature", 170, finalY + 55, { align: "center" });
+
+            doc.save(`MJ_Quotation_${clientName.replace(/\s+/g, '_')}.pdf`);
+
+            // USE ONCE LOGIC: Remove from storage after PDF generation
+            if (promoInput === activeCode && activeCode) {
+                localStorage.removeItem('heritage_promo_code');
+                localStorage.removeItem('heritage_discount');
+                localStorage.removeItem('heritage_win_time');
+                const banner = document.getElementById('discountBanner');
+                if (banner) {
+                    banner.classList.add('hidden');
+                    banner.classList.remove('active');
+                }
+            }
+        }
+    </script>
+
+    <!-- Chat Bot Widget -->
+    <div class="chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="status"></div>
+                <div>
+                    <div style="font-weight: 600; font-size: 0.9rem;">Heritage Assistant</div>
+                    <div style="font-size: 0.75rem; opacity: 0.8;">Online | Madhav Jewellers</div>
+                </div>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">Pranam! Welcome to Madhav Jewellers. How may I assist you with our heritage
+                    collections today?</div>
+            </div>
+            <div class="chat-suggestions">
+                <div class="suggestion-chip" onclick="sendSuggestion('Today\'s Gold Rate')">Gold Rate</div>
+                <div class="suggestion-chip" onclick="sendSuggestion('Silver Rate')">Silver Rate</div>
+                <div class="suggestion-chip" onclick="sendSuggestion('Showroom Address')">Address</div>
+                <div class="suggestion-chip" onclick="sendSuggestion('Book Appointment')">Booking</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Type your message...">
+                <button class="chat-send" onclick="sendMessage()">
+                    <i data-lucide="send"></i>
+                </button>
+            </div>
+        </div>
+        <button class="chat-button" onclick="toggleChat()">
+            <i data-lucide="message-circle" id="chatIcon"></i>
+        </button>
+    </div>
+
+    <script>
+        function copyCode(id) {
+            const el = document.getElementById(id);
+            const text = el.innerText || el.value;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                const oldText = btn.innerText;
+                btn.innerText = "COPIED!";
+                setTimeout(() => btn.innerText = oldText, 2000);
+            });
+        }
+
+        let bannerTimer;
+        function showDiscountBanner(val, code, duration = 30000) {
+            const banner = document.getElementById('discountBanner');
+            if (banner) {
+                if (bannerTimer) clearInterval(bannerTimer);
+                let timeLeft = Math.ceil(duration / 1000);
+
+                const updateText = () => {
+                    banner.innerHTML = `✨ LUCK WHEEL: ${val}% OFF ACTIVE | CODE: <span id="bannerCodeText">${code}</span> | EXPIRES IN ${timeLeft}s | <a href="javascript:void(0)" onclick="copyCode('bannerCodeText')" style="color:white; text-decoration:underline;">COPY</a>`;
+                };
+
+                updateText();
+                banner.classList.remove('hidden');
+                banner.classList.add('active');
+                banner.style.opacity = '1';
+                banner.style.transform = 'translateX(-50%) translateY(0)';
+
+                // AUTO-HIDE COMPLETELY
+                bannerTimer = setInterval(() => {
+                    timeLeft--;
+                    if (timeLeft <= 0) {
+                        clearInterval(bannerTimer);
+                        banner.classList.add('hidden');
+                        banner.classList.remove('active');
+                        banner.style.opacity = '0';
+                        banner.style.transform = 'translateX(-50%) translateY(100px)';
+                        // WE NO LONGER CLEAR STORAGE HERE - User wants "use once even though time is over"
+                    } else {
+                        updateText();
+                    }
+                }, 1000);
+            }
+        }
+
+        function generateBillInChat() {
+            const activeCode = localStorage.getItem('heritage_promo_code') || '';
+            const messages = document.getElementById('chatMessages');
+            const formHtml = `
+            <div style="background: rgba(197, 160, 89, 0.05); border: 2px solid var(--gold-primary); padding: 20px; border-radius: 12px; margin: 15px 0; font-family: 'serif'; color: #000;">
+                <h4 style="color: var(--gold-primary); margin-bottom: 20px; text-align: center; letter-spacing: 0.1em;">BESPOKE BILL CURATION</h4>
+                <div style="margin-bottom: 12px;">
+                    <label style="display: block; font-size: 0.7rem; opacity: 0.6; margin-bottom: 5px; font-weight: 700;">SELECT COLLECTION</label>
+                    <select id="billItem" style="width: 100%; border: 1px solid var(--gold-primary); padding: 8px; border-radius: 6px; font-family: 'serif';">
+                        <option value="${product.name}">${product.name}</option>
+                        <option value="Heritage Necklace Set">Heritage Necklace Set</option>
+                        <option value="Maharaja Gold Bangles">Maharaja Gold Bangles</option>
+                        <option value="Archival Temple Choker">Archival Temple Choker</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 12px;">
+                    <label style="display: block; font-size: 0.7rem; opacity: 0.6; margin-bottom: 5px; font-weight: 700;">INVESTMENT AMOUNT (₹)</label>
+                    <input type="number" id="billAmount" value="${Math.round(rate * currentWeight * (document.getElementById('qty').value || 1))}" style="width: 100%; padding: 8px; border: 1px solid var(--gold-primary); border-radius: 6px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; font-size: 0.7rem; opacity: 0.6; margin-bottom: 5px; font-weight: 700;">PROMO CODE</label>
+                    <input type="text" id="billPromo" value="${activeCode}" style="width: 100%; padding: 8px; border: 1px solid var(--gold-primary); border-radius: 6px; text-transform: uppercase;">
+                </div>
+                <button onclick="calculateAndShowBill()" class="cta-primary-gold" style="width: 100%; padding: 12px; border: none; cursor: pointer; font-weight: 700;">GENERATE DIGITAL SUMMARY</button>
+            </div>`;
+
+            const botMsg = document.createElement('div');
+            botMsg.className = 'message bot';
+            botMsg.innerHTML = formHtml;
+            messages.appendChild(botMsg);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function calculateAndShowBill() {
+            const item = document.getElementById('billItem').value;
+            const amountStr = document.getElementById('billAmount').value;
+            const promo = document.getElementById('billPromo').value.toUpperCase();
+            const messages = document.getElementById('chatMessages');
+
+            if (!amountStr || isNaN(amountStr)) {
+                alert("Please enter a valid investment amount.");
+                return;
+            }
+
+            const principal = parseInt(amountStr);
+            let discount = 0;
+            const activeCode = localStorage.getItem('heritage_promo_code');
+            const activeDiscount = localStorage.getItem('heritage_discount');
+
+            if (promo === activeCode) {
+                discount = parseInt(activeDiscount);
+            }
+
+            const discAmt = (principal * discount) / 100;
+            const finalAmt = principal - discAmt;
+
+            // POPULATE MODAL
+            const modalBody = document.getElementById('invoiceContent');
+            modalBody.innerHTML = `
+                <div class="invoice-row">
+                    <span>Ornament Selection:</span>
+                    <span style="font-weight: 600;">${item}</span>
+                </div>
+                <div class="invoice-row">
+                    <span>Base Principal Amount:</span>
+                    <span>₹${principal.toLocaleString()}</span>
+                </div>
+                <div class="invoice-row" style="color: #27ae60;">
+                    <span>Discount through Promo Code (${discount}%):</span>
+                    <span>- ₹${discAmt.toLocaleString()}</span>
+                </div>
+                <div class="invoice-row total">
+                    <span>Total Heritage Payable:</span>
+                    <span style="color: var(--gold-primary);">₹${finalAmt.toLocaleString()}</span>
+                </div>
+                <div style="margin-top: 15px; font-size: 0.7rem; opacity: 0.5; text-align: center; font-style: italic;">
+                    Generated for digital verification at Karelibaug Showroom.
+                </div>
+            `;
+
+            // USE ONCE LOGIC: Remove from storage after applying to a formal summary
+            if (promo === activeCode && activeCode) {
+                localStorage.removeItem('heritage_promo_code');
+                localStorage.removeItem('heritage_discount');
+                localStorage.removeItem('heritage_win_time');
+                const banner = document.getElementById('discountBanner');
+                if (banner) {
+                    banner.classList.add('hidden');
+                    banner.classList.remove('active');
+                }
+                // Also update the main page promo input if it exists
+                const mainPromo = document.getElementById('promo-input');
+                if (mainPromo) mainPromo.value = "";
+            }
+
+            // SHOW MODAL
+            document.getElementById('invoiceModal').classList.add('active');
+
+            // ALSO ADD TO CHAT FOR RECORD
+            const summaryHtml = `
+            <div style="background: #fff; border: 1px solid var(--gold-primary); padding: 15px; border-radius: 8px; margin: 10px 0; font-family: 'serif';">
+                <b>Invoice Previewed:</b> ₹${finalAmt.toLocaleString()} total for ${item}.
+            </div>`;
+
+            const summaryMsg = document.createElement('div');
+            summaryMsg.className = 'message bot';
+            summaryMsg.innerHTML = summaryHtml + `<p style="font-size: 0.8rem;">Pranam! I've displayed your <b>Digital Summary</b> on screen. You can Download it or close the preview.</p>`;
+            messages.appendChild(summaryMsg);
+            messages.scrollTop = messages.scrollHeight;
+        }
+
+        function closeInvoice() {
+            document.getElementById('invoiceModal').classList.remove('active');
+        }
+
+        function downloadInvoice() {
+            window.print();
+        }
+
+        function editInvoice() {
+            closeInvoice();
+            const chatWin = document.getElementById('chatWindow');
+            if (!chatWin.classList.contains('active')) toggleChat();
+        }
+
+        function toggleChat() {
+            const window = document.getElementById('chatWindow');
+            const icon = document.getElementById('chatIcon');
+            window.classList.toggle('active');
+            if (window.classList.contains('active')) {
+                icon.setAttribute('data-lucide', 'x');
+            } else {
+                icon.setAttribute('data-lucide', 'message-circle');
+            }
+            lucide.createIcons();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const messages = document.getElementById('chatMessages');
+            const text = input.value.trim();
+
+            if (text === "") return;
+
+            messages.innerHTML += `<div class="message user">${text}</div>`;
+            input.value = "";
+            messages.scrollTop = messages.scrollHeight;
+
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot typing';
+            typingDiv.innerHTML = '<span>.</span><span>.</span><span>.</span>';
+            messages.appendChild(typingDiv);
+            messages.scrollTop = messages.scrollHeight;
+
+            const delay = Math.min(Math.max(text.length * 20, 1000), 2500);
+            setTimeout(() => {
+                if (messages.contains(typingDiv)) messages.removeChild(typingDiv);
+                const lowText = text.toLowerCase();
+                let reply = "";
+                const discount = localStorage.getItem('heritage_discount');
+                const activeCode = localStorage.getItem('heritage_promo_code');
+
+                // PROMO CODE ANALYSIS & DIGITAL BILL
+                if (lowText.includes("heritage-") || (lowText.includes("code") && lowText.includes("-"))) {
+                    const codeMatch = text.match(/HERITAGE-\d+-[A-Z0-9]+/i);
+                    if (codeMatch) {
+                        const inputCode = codeMatch[0].toUpperCase();
+                        if (inputCode === activeCode) {
+                            reply = `<b>Code Verified: ${inputCode}</b><br><br>Applying your <b>${discount}% Archival Discount</b>. Would you like me to <b>generate your Bill</b> or calculate an amount?`;
+                        } else {
+                            reply = "That code appears to be from a different heritage session. Please use the code shown on your Royal Luck Wheel or spin again.";
+                        }
+                    }
+                }
+                // INTERACTIVE BILL REQUEST
+                else if (lowText.includes("bill") || lowText.includes("invoice") || lowText.includes("summary") || lowText.includes("create")) {
+                    generateBillInChat();
+                    return; // Exit as function handles the rest
+                }
+                // PRICE CALCULATION 
+                else if (lowText.includes("amount") || lowText.includes("lakh") || lowText.includes("thousand") || lowText.includes("calculate") || lowText.match(/\d+/)) {
+                    const numbers = lowText.match(/(\d+(\.\d+)?)/);
+                    if (numbers) {
+                        let principal = parseFloat(numbers[0]);
+                        if (lowText.includes("lakh")) principal = principal * 100000;
+                        else if (lowText.includes("thousand")) principal = principal * 1000;
+
+                        if (discount && activeCode) {
+                            const discAmt = (principal * parseInt(discount)) / 100;
+                            const finalAmt = principal - discAmt;
+
+                            reply = `
+                            <div style="background: rgba(197, 160, 89, 0.05); border: 1px solid var(--gold-primary); padding: 20px; border-radius: 8px; margin: 10px 0; font-family: 'serif';">
+                                <div style="text-align: center; border-bottom: 1px solid rgba(197,160,89,0.2); padding-bottom: 15px; margin-bottom: 15px;">
+                                    <h3 style="margin: 0; color: var(--gold-primary); letter-spacing: 0.2em;">MADHAV JEWELLERS</h3>
+                                    <small style="opacity: 0.6; letter-spacing: 0.1em;">HERITAGE INVESTMENT SUMMARY</small>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                    <span>Base Investment:</span>
+                                    <span>₹${principal.toLocaleString()}</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 8px; color: #27ae60;">
+                                    <span>LUCK Code (${discount}%):</span>
+                                    <span>- ₹${discAmt.toLocaleString()}</span>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(197,160,89,0.2); font-weight: bold; font-size: 1.1rem;">
+                                    <span>Final Payable:</span>
+                                    <span style="color: var(--gold-primary);">₹${finalAmt.toLocaleString()}</span>
+                                </div>
+                                <div style="margin-top: 15px; font-size: 0.75rem; opacity: 0.6; text-align: center;">
+                                    PROMO: ${activeCode} <br>
+                                    <i>Valid for 22K BIS Hallmarked Selections</i>
+                                </div>
+                            </div>
+                            Pranam! Above is your digitally calculated summary. You can also ask me to <b>create a full bill</b> with your details!`;
+                        } else {
+                            reply = `For an investment of ₹${principal.toLocaleString()}, I recommend claiming your <b>Heritage Discount</b> first! Visit our homepage to spin the Royal Luck Wheel for up to 15% off.`;
+                        }
+                    } else {
+                        reply = "I am ready to help with accurate heritage calculations. Please mention the specific <b>Investment Amount</b> (e.g., '2.5 Lakh' or '₹75,000') so I can apply your active benefits.";
+                    }
+                }
+                else if (lowText.includes("hello") || lowText.includes("hi") || lowText.includes("hey") || lowText.includes("pranam")) {
+                    reply = "Pranam! It's a pleasure to assist you. I am the Heritage Assistant for Madhav Jewellers. How can I help you explore our collections today?";
+                }
+                else if (lowText.includes("owner") || lowText.includes("founder") || lowText.includes("who runs") || lowText.includes("nitin") || lowText.includes("suryansh") || lowText.includes("son")) {
+                    reply = "Madhav Jewellers is a family legacy. It was founded and is owned by Mr. Nitin V. Soni. Today, his son Mr. Suryansh N. Soni personally oversees our ornaments. You can meet them at our Karelibaug studio!";
+                }
+                else if (lowText.includes("gold") || lowText.includes("rate") || lowText.includes("price") || lowText.includes("cost")) {
+                    const gRate = localStorage.getItem('gold_rate') || 14335;
+                    const sRate = localStorage.getItem('silver_rate') || 270;
+                    if (lowText.includes("silver")) {
+                        reply = `For silver, we use 925 Sterling purity. Today's live rate curated by the Soni family is ₹${parseInt(sRate).toLocaleString()} per gram.`;
+                    } else {
+                        reply = `Madhav Jewellers ensures we only provide 22K BIS Hallmarked gold. Today's live market rate is ₹${parseInt(gRate).toLocaleString()} per gram.`;
+                    }
+                }
+                else if (lowText.includes("bridal") || lowText.includes("wedding") || lowText.includes("marriage")) {
+                    reply = "Our Bridal Suite is our masterpiece. Mr. Suryansh Soni has personally curated archival temple jewelry for new brides. Would you like to see the 'Collections' section?";
+                }
+                else if (lowText.includes("location") || lowText.includes("address") || lowText.includes("store") || lowText.includes("vadodara")) {
+                    reply = "We welcome you to our flagship showroom in Karelibaug, Vadodara. It is a regal space designed by the Soni family.";
+                }
+                else if (lowText.includes("thank") || lowText.includes("thanks") || lowText.includes("ok")) {
+                    reply = "You are most welcome! It is our honor to serve you.";
+                }
+                else {
+                    reply = "That's an interesting question. Mr. Nitin and Mr. Suryansh Soni prioritize personalized service. Would you like their contact details for a more detailed discussion?";
+                }
+
+                const botMsg = document.createElement('div');
+                botMsg.className = 'message bot';
+                botMsg.innerHTML = reply;
+                messages.appendChild(botMsg);
+                messages.scrollTop = messages.scrollHeight;
+            }, delay);
+        }
+
+        function sendSuggestion(text) {
+            document.getElementById('chatInput').value = text;
+            sendMessage();
+        }
+
+        document.getElementById('chatInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') sendMessage();
+        });
+
+        function syncUI() {
+            if (!localStorage.getItem('gold_rate')) localStorage.setItem('gold_rate', 14335);
+            if (!localStorage.getItem('silver_rate')) localStorage.setItem('silver_rate', 270);
+
+            // Track previous rates to show trending logic
+            if (!localStorage.getItem('prev_gold')) localStorage.setItem('prev_gold', 14380);
+            if (!localStorage.getItem('prev_silver')) localStorage.setItem('prev_silver', 275);
+
+            const goldRate = parseInt(localStorage.getItem('gold_rate'));
+            const silverRate = parseInt(localStorage.getItem('silver_rate'));
+            const prevGold = parseInt(localStorage.getItem('prev_gold'));
+            const prevSilver = parseInt(localStorage.getItem('prev_silver'));
+
+            const minsAgo = Math.floor(Math.random() * 5) + 1;
+
+            const getTrendHTML = (curr, prev) => {
+                if (curr < prev) return `<span class="trend-down">↓</span> <span class="trend-msg">Trending Down - Good time to buy</span>`;
+                if (curr > prev) return `<span class="trend-up">↑</span> <span class="trend-msg">Trending Up</span>`;
+                return `<span class="trend-msg">Stable</span>`;
+            };
+
+            document.querySelectorAll('.ticker-gold').forEach(el => {
+                el.innerHTML = `₹${goldRate.toLocaleString()} ${getTrendHTML(goldRate, prevGold)} <small style="opacity:0.6; font-weight:normal; margin-left:10px;">(${minsAgo}m ago)</small>`;
+            });
+            document.querySelectorAll('.ticker-silver').forEach(el => {
+                el.innerHTML = `₹${silverRate.toLocaleString()} ${getTrendHTML(silverRate, prevSilver)} <small style="opacity:0.6; font-weight:normal; margin-left:10px;">(${minsAgo}m ago)</small>`;
+            });
+
+            const savedDiscount = localStorage.getItem('heritage_discount');
+            const savedCode = localStorage.getItem('heritage_promo_code');
+            const winTime = localStorage.getItem('heritage_win_time');
+
+            if (savedDiscount && savedCode && winTime) {
+                const elapsed = Date.now() - parseInt(winTime);
+                if (elapsed < 30000) {
+                    showDiscountBanner(savedDiscount, savedCode, 30000 - elapsed);
+                } else {
+                    // Just hide the banner, but keep the code for "Use Once"
+                    const banner = document.getElementById('discountBanner');
+                    if (banner) banner.classList.add('hidden');
+                }
+            }
+        }
+
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            const currentScroll = window.pageYOffset;
+
+            // Header state
+            if (currentScroll > 100) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
+
+            // SMART HIDE ON SCROLL DOWN
+            if (currentScroll > lastScroll && currentScroll > 500) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            lastScroll = currentScroll;
+
+            // Progress Bar
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            const progBar = document.getElementById("progress-bar");
+            if (progBar) progBar.style.width = scrolled + "%";
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            syncUI();
+            calculate();
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('active');
+                });
+            }, observerOptions);
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+            lucide.createIcons();
+        });
+
+        function toggleMenu() {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>
